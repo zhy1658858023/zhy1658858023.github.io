@@ -4,88 +4,186 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heyao Zhang | Academic Homepage</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f8fa;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      line-height: 1.7;
+      color: #1f2937;
+      background: #f3f6fb;
     }
+
     header {
-      background: #1f3a5f;
+      background: linear-gradient(135deg, #102a43, #1f4e79);
       color: white;
-      padding: 50px 20px;
-      text-align: center;
+      padding: 70px 20px 60px;
     }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
+
+    .hero {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 36px;
     }
-    header p {
-      margin-top: 10px;
-      font-size: 18px;
-    }
-    nav {
+
+    .avatar {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.9);
+      object-fit: cover;
       background: white;
-      padding: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .hero-text h1 {
+      margin: 0;
+      font-size: 42px;
+      letter-spacing: 0.5px;
+    }
+
+    .hero-text p {
+      margin: 12px 0 0;
+      font-size: 18px;
+      color: #dbeafe;
+    }
+
+    .tagline {
+      margin-top: 18px;
+      font-size: 15px;
+      color: #e5e7eb;
+      max-width: 680px;
+    }
+
+    nav {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(8px);
+      padding: 14px 20px;
       text-align: center;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #e5e7eb;
       position: sticky;
       top: 0;
+      z-index: 10;
     }
+
     nav a {
-      margin: 0 14px;
-      color: #1f3a5f;
+      margin: 0 16px;
+      color: #1f4e79;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 15px;
     }
+
+    nav a:hover {
+      color: #0f172a;
+      border-bottom: 2px solid #1f4e79;
+      padding-bottom: 4px;
+    }
+
     main {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 1000px;
+      margin: 36px auto;
       padding: 0 20px;
     }
+
     section {
       background: white;
-      margin-bottom: 24px;
-      padding: 24px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 26px;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+      border: 1px solid #edf2f7;
     }
+
     h2 {
-      color: #1f3a5f;
-      border-bottom: 2px solid #e5e8ef;
-      padding-bottom: 8px;
+      margin-top: 0;
+      color: #102a43;
+      font-size: 24px;
+      border-bottom: 2px solid #e5edf5;
+      padding-bottom: 10px;
     }
+
     ul {
       padding-left: 22px;
     }
+
+    li {
+      margin-bottom: 12px;
+    }
+
+    .pub-item, .project-item {
+      padding: 16px 18px;
+      background: #f8fafc;
+      border-left: 4px solid #1f4e79;
+      border-radius: 10px;
+      margin-bottom: 14px;
+    }
+
+    .pub-title, .project-title {
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .meta {
+      color: #64748b;
+      font-size: 14px;
+      margin-top: 4px;
+    }
+
+    a {
+      color: #1f4e79;
+    }
+
     footer {
       text-align: center;
-      padding: 30px;
-      color: #666;
+      padding: 32px 20px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 34px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 6px 10px;
+      }
     }
   </style>
 </head>
 
 <body>
   <header>
-  <img src="images/HeyaoZhang.jpg"
-       width="160"
-       style="
-       border-radius:50%;
-       border:4px solid white;
-       margin-bottom:20px;
-       object-fit:cover;
-       ">
+    <div class="hero">
+      <img class="avatar" src="images/HeyaoZhang.jpg" alt="Heyao Zhang">
 
-  <h1>Heyao Zhang</h1>
+      <div class="hero-text">
+        <h1>Heyao Zhang</h1>
+        <p>Beijing Jiaotong University</p>
+        <p>Ph.D. Student in Computer Networks</p>
 
-  <p>
-    Beijing Jiaotong University<br>
-    Ph.D. Student in Computer Networks
-  </p>
-</header>
+        <div class="tagline">
+          My research focuses on computing-aware networking, network-layer
+          computation-oriented communication, programmable data planes, and
+          edge intelligence.
+        </div>
+      </div>
+    </div>
+  </header>
 
   <nav>
     <a href="#about">About</a>
@@ -99,11 +197,15 @@
     <section id="about">
       <h2>About</h2>
       <p>
-        I am a Ph.D. student working on computer networks, with a focus on
-        computing-aware networking, network-layer computation-oriented communication,
-        programmable data planes, and edge intelligence. My research explores how
-        networks can better coordinate communication and computational resources for
-        emerging distributed applications.
+        I am a Ph.D. student at Beijing Jiaotong University. My research
+        focuses on computer networks, especially computing-aware networking,
+        network-layer computation-oriented communication, programmable data
+        planes, and edge intelligence.
+      </p>
+      <p>
+        I am interested in designing network mechanisms that coordinate
+        communication and computational resources for emerging distributed
+        applications.
       </p>
     </section>
 
@@ -120,46 +222,67 @@
 
     <section id="publications">
       <h2>Selected Publications</h2>
-      <ul>
-        <li>
-          <strong>P4Net: Facilitating Computation-oriented Communication Using P4-based SDN.</strong>
-          Under review / Manuscript.
-        </li>
-        <li>
-          <strong>Srvcast: A Stateful Anycast Solution for Integrating Communication and Computation.</strong>
-          Under revision / Manuscript.
-        </li>
-      </ul>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          P4Net: Facilitating Computation-oriented Communication Using P4-based SDN
+        </div>
+        <div class="meta">
+          Heyao Zhang, et al. Manuscript / Under Review.
+        </div>
+      </div>
+
+      <div class="pub-item">
+        <div class="pub-title">
+          Srvcast: A Stateful Anycast Solution for Integrating Communication and Computation
+        </div>
+        <div class="meta">
+          Heyao Zhang, et al. Manuscript / Under Revision.
+        </div>
+      </div>
     </section>
 
     <section id="projects">
       <h2>Projects</h2>
-      <ul>
-        <li>
-          <strong>Computing Service Identification and Routing Mechanism</strong><br>
+
+      <div class="project-item">
+        <div class="project-title">
+          Computing Service Identification and Routing Mechanism
+        </div>
+        <div class="meta">
           Designed a network-layer identification and forwarding mechanism for computational services.
-        </li>
-        <li>
-          <strong>P4-based Stateful Service Forwarding</strong><br>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">
+          P4-based Stateful Service Forwarding
+        </div>
+        <div class="meta">
           Implemented prototype functions for service identification, packet processing, and session-aware forwarding.
-        </li>
-        <li>
-          <strong>Edge Intelligence for Distribution Network Applications</strong><br>
+        </div>
+      </div>
+
+      <div class="project-item">
+        <div class="project-title">
+          Edge Intelligence for Distribution Network Applications
+        </div>
+        <div class="meta">
           Studied lightweight AI models and cloud-edge collaboration for intelligent terminal scenarios.
-        </li>
-      </ul>
+        </div>
+      </div>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <p>Email: your_email@example.com</p>
-      <p>GitHub: https://github.com/your_username</p>
+      <p>GitHub: <a href="https://github.com/zhy1658858023">https://github.com/zhy1658858023</a></p>
       <p>Google Scholar: Coming soon</p>
     </section>
   </main>
 
   <footer>
-    © 2026 Zhang Bo. All rights reserved.
+    © 2026 Heyao Zhang. All rights reserved.
   </footer>
 </body>
 </html>
