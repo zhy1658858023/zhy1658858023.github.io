@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heyao Zhang | Academic Homepage</title>
   <link rel="icon" type="image/png" href="images/rick.png">
-  
+
   <style>
     * {
       box-sizing: border-box;
@@ -21,17 +21,63 @@
     }
 
     header {
-      background: linear-gradient(135deg, #102a43, #1f4e79);
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 85% 30%, rgba(59,130,246,0.28), transparent 28%),
+        linear-gradient(135deg, #102a43, #1f4e79);
       color: white;
       padding: 70px 20px 60px;
     }
 
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.06) 45%, transparent 70%);
+      pointer-events: none;
+    }
+
     .hero {
-      max-width: 1000px;
+      position: relative;
+      z-index: 1;
+      max-width: 1100px;
       margin: 0 auto;
       display: flex;
       align-items: center;
       gap: 36px;
+    }
+
+    .hero-main {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      flex: 1;
+    }
+
+    .hero-logo {
+      width: 260px;
+      max-width: 30%;
+      opacity: 0.88;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.25));
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-main {
+        flex-direction: column;
+      }
+
+      .hero-logo {
+        max-width: 70%;
+        width: 220px;
+        margin-top: 10px;
+      }
     }
 
     .avatar {
@@ -206,18 +252,24 @@
 <body>
   <header>
     <div class="hero">
-      <img class="avatar" src="images/HeyaoZhang.jpg" alt="Heyao Zhang">
 
-      <div class="hero-text">
-        <h1>Heyao Zhang</h1>
-        <p>Beijing Jiaotong University</p>
-        <p>Ph.D. Student in National Engineering Research Center of Advanced Network Technologies (ANT)</p>
+      <div class="hero-main">
+        <img class="avatar" src="images/HeyaoZhang.jpg" alt="Heyao Zhang">
 
-        <div class="tagline">
-          My research focuses on computing-aware networking, network for AI, AI for network,
-          network addressing and forwarding mechanism, and programmable data planes.
+        <div class="hero-text">
+          <h1>Heyao Zhang</h1>
+          <p>Beijing Jiaotong University</p>
+          <p>Ph.D. Student in National Engineering Research Center of Advanced Network Technologies (ANT)</p>
+
+          <div class="tagline">
+            My research focuses on computing-aware networking, network for AI, AI for network,
+            network addressing and forwarding mechanism, and programmable data planes.
+          </div>
         </div>
       </div>
+
+      <img class="hero-logo" src="images/bjtu-ant-logo.png" alt="BJTU and ANT Logo">
+
     </div>
   </header>
 
@@ -264,7 +316,7 @@
           Heyao Zhang, Bo Lei, Shuai Gao, Weiting Zhang,
           Yuming Zhang, Cheng Chi, Hongke Zhang<br>
 
-          IEEE ICC 2025; CCF C
+          IEEE ICC 2025
 
           &nbsp;&nbsp;
 
@@ -312,7 +364,11 @@
 
           <div class="project-gallery">
 
-            <img src="images/srvcast/srvcast_workflow.jpg" alt="Srvcast system workflow">
+            <img src="images/srvcast/srvcast_arch.jpg" alt="Srvcast Architecture">
+
+            <img src="images/srvcast/srvcast_workflow.jpg" alt="Two-stage Routing">
+
+            <img src="images/srvcast/srvcast_servicenat.jpg" alt="ServiceNAT">
 
           </div>
 
