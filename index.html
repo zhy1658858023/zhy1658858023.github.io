@@ -17,7 +17,9 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
       line-height: 1.7;
       color: #1f2937;
-      background: #f3f6fb;
+      background:
+        radial-gradient(circle at top left, rgba(31,78,121,0.10), transparent 32%),
+        linear-gradient(180deg, #f8fbff 0%, #eef4fb 100%);
     }
 
     header {
@@ -138,12 +140,13 @@
     }
 
     section {
-      background: white;
-      margin-bottom: 26px;
-      padding: 30px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-      border: 1px solid #edf2f7;
+      background: rgba(255,255,255,0.88);
+      margin-bottom: 28px;
+      padding: 34px;
+      border-radius: 22px;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+      border: 1px solid rgba(226,232,240,0.9);
+      backdrop-filter: blur(10px);
     }
 
     h2 {
@@ -163,16 +166,25 @@
     }
 
     .pub-item, .project-item {
-      padding: 16px 18px;
-      background: #f8fafc;
-      border-left: 4px solid #1f4e79;
-      border-radius: 10px;
-      margin-bottom: 14px;
+      padding: 24px;
+      background:
+        linear-gradient(135deg, #ffffff 0%, #f7fbff 100%);
+      border-left: 5px solid #1f4e79;
+      border-radius: 18px;
+      margin-bottom: 16px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
     }
 
-    .pub-title, .project-title {
+    .pub-title {
       font-weight: 700;
       color: #0f172a;
+    }
+
+    .project-title {
+      font-size: 18px;
+      font-weight: 800;
+      color: #0f172a;
+      margin-bottom: 10px;
     }
 
     .meta {
@@ -209,6 +221,22 @@
 
     .project-gallery img:hover {
       transform: scale(1.02);
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: #1f4e79;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background: #14395c;
     }
 
     a {
@@ -366,9 +394,7 @@
       <p>Email: 23111018@bjtu.edu.cn, 1658858023@qq.com</p>
       <p>
         GitHub:
-        <a href="https://github.com/zhy1658858023" target="_blank">
-          https://github.com/zhy1658858023
-        </a>
+        <a class="btn" href="https://github.com/zhy1658858023/Srvcast" target="_blank">GitHub</a>
       </p>
       <p>
         Google Scholar:
