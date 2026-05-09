@@ -126,6 +126,42 @@
       margin-bottom: 14px;
     }
 
+    .project-layout {
+      display: flex;
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .project-text {
+      flex: 1.2;
+    }
+
+    .project-gallery {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .project-gallery img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #dbe4ee;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      transition: 0.25s;
+    }
+
+    .project-gallery img:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 900px) {
+      .project-layout {
+        flex-direction: column;
+      }
+    }
+
     .pub-title, .project-title {
       font-weight: 700;
       color: #0f172a;
@@ -177,7 +213,7 @@
         <p>Ph.D. Student in National Engineering Research Center of Advanced Network Technologies (ANT)</p>
 
         <div class="tagline">
-          My research focuses on computing-aware networking, network for AI, AI for network, 
+          My research focuses on computing-aware networking, network for AI, AI for network,
           network addressing and forwarding mechanism, and programmable data planes.
         </div>
       </div>
@@ -197,7 +233,7 @@
       <h2>About</h2>
       <p>
         I am a Ph.D. student at National Engineering Research Center of Advanced Network Technologies, Beijing Jiaotong University. My research
-        focuses on on computing-aware networking, network for AI, AI for network, network addressing and forwarding mechanism, and programmable data planes.
+        focuses on computing-aware networking, network for AI, AI for network, network addressing and forwarding mechanism, and programmable data planes.
       </p>
       <p>
         I am interested in designing network system that coordinate
@@ -240,32 +276,52 @@
       <h2>Projects</h2>
 
       <div class="project-item">
-        <div class="project-title">
-          Srvcast: Stateful and Scalable Anycast System for Computing-Aware Networks
+
+        <div class="project-layout">
+
+          <div class="project-text">
+
+            <div class="project-title">
+              Srvcast: Stateful and Scalable Anycast System for Computing-Aware Networks
+            </div>
+
+            <div class="meta">
+              Srvcast is a network-layer system designed for
+              computation-aware networks. It enables stateful and scalable
+              service-oriented anycast communication by integrating
+              anycast routing, segment routing, and programmable
+              data-plane mechanisms.
+
+              <br><br>
+
+              The system introduces:
+              <ul>
+                <li>Two-stage routing for stateful SID task steering</li>
+                <li>ServiceNAT for SID-to-host transparent socket compatibility</li>
+                <li>Selective SID advertisement for scalable routing</li>
+                <li>P4-based programmable data-plane implementation</li>
+              </ul>
+
+              <a href="https://github.com/zhy1658858023/Srvcast" target="_blank">
+                [GitHub]
+              </a>
+            </div>
+
+          </div>
+
+          <div class="project-gallery">
+
+            <img src="images/srvcast_arch.png" alt="Srvcast Architecture">
+
+            <img src="images/srvcast_twostage.png" alt="Two-stage Routing">
+
+            <img src="images/srvcast_servicenat.png" alt="ServiceNAT">
+
+          </div>
+
         </div>
 
-        <div class="meta">
-          Srvcast is a network-layer system designed for
-          computation-aware networks. It enables stateful and scalable
-          service-oriented anycast communication by integrating
-          anycast routing, segment routing, and programmable
-          data-plane mechanisms.
-
-        <br><br>
-
-        The system introduces:
-        <ul>
-          <li>Two-stage routing for stateful SID task steering</li>
-          <li>ServiceNAT for SID-to-host transparent socket compatibility</li>
-          <li>Selective SID advertisement for scalable routing</li>
-          <li>P4-based programmable data-plane implementation</li>
-        </ul>
-
-        <a href="https://github.com/zhy1658858023/Srvcast" target="_blank">
-          [GitHub]
-        </a>
       </div>
-    </div>
 
 
     <section id="contact">
